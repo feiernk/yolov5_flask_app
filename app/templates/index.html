@@ -20,27 +20,50 @@
             {{ form.hidden_tag() }}
 
             <div class="form-group">
-                {{ form.workspace_dir.label }}
-                {{ form.workspace_dir(class="form-control") }}
-            </div>
-            <div class="form-group">
-                {{ form.data_dir.label }}
-                {{ form.data_dir(class="form-control") }}
-            </div>
-
-            <div class="form-group">
-                {% for error in form.workspace_dir.errors %}
-                    <span style="color:#ff0000;">[{{ error }}]</span>
-                {% endfor %}
-            </div>
-            <div class="form-group">
-                <div class="">
-                    {{ form.create(class="btn btn-default") }}
+                <div class="col-md-6">
+                    {{ form.workspace_dir.label }}
+                    {{ form.workspace_dir(class="form-control") }}
                 </div>
             </div>
             <div class="form-group">
-                <div class="">
-                    {{ form.run(class="btn btn-default") }}
+                <div class="col-md-6">
+                    {{ form.data_dir.label }}
+                    {{ form.data_dir(class="form-control") }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">
+                    {{ form.model_select.label }}
+                    {{ form.model_select }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">
+                    {% for error in form.workspace_dir.errors %}
+                        <span style="color:#ff0000;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    {{ form.create(class="btn btn-default btn-block") }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    {{ form.train(class="btn btn-primary btn-block") }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    {{ form.test(class="btn btn-primary btn-block") }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    {{ form.detect(class="btn btn-primary btn-block") }}
                 </div>
             </div>
         </form>
